@@ -83,6 +83,17 @@ export const login = (email, password) => {
     });
   };
 };
+
+export const loginGoogle = (googleId, accessToken) => {
+  return async (dispatch) => {
+    dispatch({
+      type: LOGIN,
+      token: accessToken,
+      userId: googleId,
+      refreshToken: null,
+    });
+  };
+};
 export const logout = () => {
   return { type: LOGOUT };
 };

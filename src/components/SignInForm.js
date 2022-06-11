@@ -1,10 +1,16 @@
 import React, { Component } from "react";
 import * as authActions from "../store/actions/auth";
 import { connect } from "react-redux";
+import { GoogleLogin } from "react-google-login";
+import { gapi } from "gapi-script";
 
 const mapDispatchToProps = (dispatch, getState) => {
   return {
     auth: (state) => dispatch(authActions.login(state.email, state.password)),
+    authGoogle: (response) =>
+      dispatch(
+        authActions.loginGoogle(response.googleId, response.accessToken)
+      ),
   };
 };
 class SignInForm extends Component {
@@ -15,11 +21,25 @@ class SignInForm extends Component {
       email: "",
       password: "",
     };
-
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.responseGoogle = this.responseGoogle.bind(this);
+  }
+  start() {
+    gapi.client.init({
+      clientId:
+        "923135927843-8l3bji5eutdl9mkum2udj029u7cn3pb6.apps.googleusercontent.com",
+      scope: "email",
+    });
+  }
+  componentDidMount() {
+    gapi.load("client:auth2", this.start);
   }
 
+  googleFailure(response) {
+    alert("Failed to connect with google");
+    console.log(response);
+  }
   handleChange(event) {
     let target = event.target;
     let value = target.value;
@@ -32,15 +52,24 @@ class SignInForm extends Component {
 
   async handleSubmit(event) {
     event.preventDefault();
-
+    console.log("leh", event);
     try {
       await this.props.auth(this.state);
       this.props.history.push("/home");
     } catch (err) {
-      alert(err);
+      console.log(err);
     }
   }
+  async responseGoogle(response) {
+    console.log(response.googleId, response.accessToken);
 
+    try {
+      await this.props.authGoogle(response);
+      this.props.history.push("/home");
+    } catch (err) {
+      console.log(err);
+    }
+  }
   render() {
     return (
       <div className="formCenter">
@@ -79,6 +108,13 @@ class SignInForm extends Component {
             <button className="formFieldButton" type="submit">
               Sign In
             </button>
+
+            <GoogleLogin
+              className="Googlebtn"
+              clientId="923135927843-8l3bji5eutdl9mkum2udj029u7cn3pb6.apps.googleusercontent.com"
+              onSuccess={this.responseGoogle}
+              onFailure={this.googleFailure}
+            />
           </div>
         </form>
       </div>
