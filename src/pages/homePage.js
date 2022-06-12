@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "../index.css";
-import { Route, Switch, Link, Router } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import * as booksActions from "../store/actions/books";
 import { connect } from "react-redux";
