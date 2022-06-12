@@ -8,6 +8,7 @@ import {
 import { connect } from "react-redux";
 import AuthPage from "../pages/authPage";
 import HomePage from "../pages/homePage";
+import bookDetails from "../pages/bookDetails";
 
 const mapStateToProps = (state) => ({
   auth: state.auth,
@@ -39,6 +40,7 @@ class MyRouts extends React.Component {
                 this.isLoggedIn() ? <Redirect to="/sign-in" /> : <HomePage />
               }
             />
+            <Route path="/book" component={bookDetails} />
           </Switch>
         </Router>
       </div>
