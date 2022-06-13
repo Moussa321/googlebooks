@@ -299,7 +299,7 @@ body{
 }
 
 .item-size-star{
-  color: #C90000;
+  color: yellow;
   margin-right: 5px;
 }
 
@@ -398,4 +398,79 @@ padding-top: 100px;
 }
 .linkk{
   padding: 10px;
+}
+.prodt_pagination li {
+  display: inline-block;
+  padding: 20px;
+
+}
+
+.prodt_pagination {
+  text-align: right;
+  display: block;
+  width: 100%;
+  margin-top: 20px;
+}
+
+
+.button1 {
+  position: relative;
+  font-size: 16px;
+  padding: 0 20px;
+  display: inline-block;
+  border:     none;
+  outline:    none;
+  background:   #FFF;
+  border-radius: 3px;
+  border: 1px solid #1F1F1F;
+  box-shadow: 0 1px 3px 0px rgba(white, .5),
+    inset 0 1px rgba(#FFF, .2); 
+}
+
+.buttonRound {
+  height: 4em;
+  width:  4em;
+  border-radius: 100%;
+}
+
+.buttonDark {
+  background: white;
+  background-size: auto 150%;
+  background-position: 0 100%;
+}
+.buttonDark:hover {background-position: 0 50%;}
+  
+.buttonDark:active {
+    color: #000;
+    background-position: 0 50%;
+    background: #333333;
+    box-shadow: inset 0 2px 3px rgba(black, .5), 0 1px 1px rgba(white, .1);
+    
+   
+  }
+
+
+
+body:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top:0;
+    bottom:0;
+    left: 0;
+    right:0;
+    opacity: .5;
+    
+}
+.image2 {
+  max-width: 100%;
+  height: auto;
+}
+
+.image1 {
+  height:  220px;
+  width: auto;
+}
+.star{
+  color: gold;
 }

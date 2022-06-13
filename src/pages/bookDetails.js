@@ -11,12 +11,7 @@ class bookDetails extends Component {
       downloadLinkPDF: null,
       downloadLinkEbook: null,
     };
-    this.handleDownload = this.handleDownload.bind(this);
   }
-  handleDownload = () => {
-    console.log(this.state.downloadLinkPDF.downloadLink);
-    console.log(this.props.location.state.product.accessInfo);
-  };
 
   componentDidMount() {
     this.setState({
@@ -30,7 +25,7 @@ class bookDetails extends Component {
   render() {
     return (
       <div className="container2">
-        <div className="card-image">
+        <div className="card-image shadow-lg">
           <img
             src={
               this.state.book && this.state.book.imageLinks
@@ -38,7 +33,7 @@ class bookDetails extends Component {
                 : "assets/images/thebook.png"
             }
             alt="itm"
-            style={{ width: "100%", height: "100%" }}
+            style={{ width: 400 }}
           />
         </div>
         <div className="card-right">
