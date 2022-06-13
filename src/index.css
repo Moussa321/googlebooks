@@ -181,7 +181,7 @@ padding: 0px;
 }
 body{
 
-  background: #d1d5db;
+  background: white;
 }
 
 .height{
@@ -393,16 +393,9 @@ body{
   }
 }
 
-.container{
-    background-color: white;
-  }
 .container2{
 padding-top: 100px;
-  background-color: white;
 }
 .linkk{
   padding: 10px;
-}
-.BigApp{
-  background-color: white;
 }
