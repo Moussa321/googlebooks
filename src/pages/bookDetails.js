@@ -83,7 +83,7 @@ class bookDetails extends Component {
               ? this.state.book.categories.map((cat) => (
                   <p className="item-desc">{cat}</p>
                 ))
-              : "No Description"}
+              : "No Categories"}
           </p>
           <br></br>
           {this.state.downloadLinkPDF &&

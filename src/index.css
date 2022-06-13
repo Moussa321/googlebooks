@@ -392,9 +392,13 @@ body{
       border: 0;
   }
 }
+
+.container{
+    background-color: white;
+  }
 .container2{
-justify-content: center;
 padding-top: 100px;
+  background-color: white;
 }
 .linkk{
   padding: 10px;

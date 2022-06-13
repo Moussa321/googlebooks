@@ -89,7 +89,7 @@ class homePage extends Component {
   }
   render() {
     return (
-      <>
+   
         <div className="container">
           <div className="row height d-flex justify-content-center align-items-center">
             <div className="col-md-6">
@@ -103,7 +103,7 @@ class homePage extends Component {
               </div>
             </div>
           </div>
-        </div>
+     
         <div className="container py-5">
           <div className="row pb-5 mb-4">
             {this.state.books != null && this.state.books.length > 0 ? (
@@ -117,7 +117,8 @@ class homePage extends Component {
             )}
           </div>
         </div>
-      </>
+        </div>
+   
     );
   }
 }
