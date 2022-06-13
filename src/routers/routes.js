@@ -18,8 +18,7 @@ class MyRouts extends React.Component {
     super();
     this.isLoggedIn = this.isLoggedIn.bind(this);
   }
-  isLoggedIn(nextState, replace, next) {
-    console.log(this.props.auth.userId);
+  isLoggedIn() {
     if (this.props.auth.userId) {
       return false;
     }
